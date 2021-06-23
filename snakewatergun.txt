@@ -1,0 +1,80 @@
+import random
+import time
+print("SNAKE WATER GUN")
+print("Instructions :")
+time.sleep(1)  #sleep for 2 seconds
+print("The game is of total 10 points")
+time.sleep(0.5)
+print("S is for Snake ")
+time.sleep(1)
+print("W for Water")
+time.sleep(1)
+print("And")
+time.sleep(1)
+print("G for Gun ")
+time.sleep(0.5)
+ch="y"
+while(ch=="y" or ch=="Y"):
+    print("********Let the game begin******** ")
+    c=1
+    userpoint=0   #userpoint
+    computerpoint=0    #computer point
+    while(c<=10):
+        lst = ["s", "w", "g"]
+        inp = random.choice(lst)
+        print("Snake,Water,Gun : ")
+        choice=input()
+        if choice=="s" or choice=="S":
+            if inp=="w" or inp=="W":
+                userpoint+=1
+                print("Congo!!You get a point")
+            elif inp=="g" or inp=="G":
+                computerpoint+=1
+                print("Computer get a point!!! computer chose gun")
+            elif inp=="s" or inp=="S":
+                print("TIE!!!!")
+
+        elif choice=="w" or choice=="W":
+            if inp=="g" or inp=="G":
+                userpoint+=1
+                print("Congo!!You get a point")
+            elif inp=="s" or inp=="S":
+                computerpoint+=1
+                print("Computer get a point!!! computer chose snake")
+            elif inp=="w" or inp=="W":
+                print("TIE!!!!")
+
+        elif choice=="g" or choice=="G":
+            if inp=="S" or inp=="S":
+                userpoint+=1
+                print("Congo!!You get a point")
+            elif inp=="w" or inp=="W":
+                computerpoint+=1
+                print("Computer get a point!!! computer chose water")
+            elif inp=="g" or inp=="G":
+                print("TIE!!!!")
+
+        else:
+            print("Wrong choice!! choose from (s , g and w)")
+        print(f"{10-c} chances left ")
+        c = c + 1
+
+    print("\nGame Over")
+    time.sleep(1)
+    if computerpoint > userpoint:
+        print("\n Computer wins and You lose!!! \n")
+    elif userpoint > computerpoint:
+        print("Wohooo You won!!!!")
+    else:
+        print("It's a Draw!!!")
+    time.sleep(0.5)
+    print("*******SCORE BOARD*******")
+    print("User : ", userpoint, " points")
+    print("Computer : ", computerpoint, " points")
+    print("Do you want to play again ? press \"y\" for yes and any other key for No : ", end="")
+    ch = input()
+
+if ch!="y" or ch!="Y":
+    time.sleep(0.5)
+    print("Will meet you next time")
+
